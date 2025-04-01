@@ -9,6 +9,8 @@ from urllib.parse import urlparse
 from scipy.sparse import hstack
 import nltk
 
+# The print statements were for debugging
+
 # Ensure NLTK resources are available
 nltk.download('punkt')
 nltk.download('stopwords')
