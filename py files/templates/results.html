@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake News Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div>
+        <h2>Prediction Result</h2>
+
+        {% if result %}
+            <h3>Prediction: {{ result }}</h3>
+        {% endif %}
+
+        <form action="/" method="get">
+            <button type="submit">Back to Input</button>
+        </form>
+    </div>
+</body>
+</html>

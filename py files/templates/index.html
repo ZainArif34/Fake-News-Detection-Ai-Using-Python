@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake News Detector</title>
+
+    <!-- Link to the external CSS file in the static folder -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div>
+        <h2>Fake News Detector</h2>
+        <h3>This model has an accuracy of 83% so errors in predictions are to be expected</h3>
+        <form method="post">
+            <label for="title">Article Title:</label>
+            <input type="text" id="title" name="title" required>
+            <br>
+
+            <label for="url">Article URL:</label>
+            <input type="url" id="url" name="url" required>
+            <br>
+
+            <button type="submit">Check News</button>
+        </form>
+
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+
+        {% if result %}
+            <h3 class="result">Prediction: {{ result }}</h3>
+        {% endif %}
+    </div>
+</body>
+</html>
